@@ -38,7 +38,12 @@ const contract = new ethers.Contract(address, ERC20_ABI, provider)
 
 const main = async () => {
     const name = await contract.name()
-    console.log("name", name)
+    const symbol = await contract.symbol()
+    const totalSupply = await contract.totalSupply()
+
+    console.log(`${name}`)
+    console.log(`${symbol}`)
+    console.log(`${totalSupply}`)
 }
 
 main()
